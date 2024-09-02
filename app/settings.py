@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,10 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'debug_toolbar',
+    'debug_toolbar', # кнослоь отладки Django Debug Shell
 
-    'main',
-    'goods',
+    'main', # мое зарегестрированное приложение main
+    'goods', # мое зарегестрированное приложение goods
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware", # добовляем для консоли отладки Django debug shell
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -111,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'ru' # меняем язык админ панели
 
 TIME_ZONE = 'UTC'
 
@@ -126,11 +128,15 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 
-INTERNAL_IPS = [
+MEDIA_URL = 'media/' # название пути папки с фото
+MEDIA_ROOT = BASE_DIR / 'media' # путь к папке с фото
+
+# для панели отлдки dango debug shell
+INTERNAL_IPS = [ 
     # ...
     "127.0.0.1",
     # ...
-]
+] 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
