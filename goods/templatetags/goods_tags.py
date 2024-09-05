@@ -18,4 +18,4 @@ def tag_categories():
 def change_params(context, **kwargs): # параметр **kwargs - получает не только значение но и название переменной. 
     query = context['request'].GET.dict() # из переменной context получаем значение по ключу request получаем данные в виде словоря.
     query.update(kwargs)
-    return urlencode(query) # Формируем из словоря готовую ссылку
+    return urlencode(query) # Формируем из словоря готовую ссылку # На выходе (пример) {'on_sale': 'on', 'order_by': 'price', 'page': 1} 
