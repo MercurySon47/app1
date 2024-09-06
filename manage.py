@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# python -Xutf8 manage.py dumpdata goods.Categories > fixtures/goods/categories.json
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
