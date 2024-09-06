@@ -44,8 +44,9 @@ INSTALLED_APPS = [
 
     'debug_toolbar', # кнослоь отладки Django Debug Shell
 
-    'main', # мое зарегестрированное приложение main
-    'goods', # мое зарегестрированное приложение goods
+    'main', # мое зарегестрированное приложение main главное
+    'goods', # мое зарегестрированное приложение goods товары
+    'users', # мое зарегестрированное приложение users пользователи
 ]
 
 MIDDLEWARE = [
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
